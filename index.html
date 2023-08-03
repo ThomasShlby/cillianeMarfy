@@ -11,9 +11,9 @@
 
 <body>
     <div class="base w-screen h-screen bg-indigo-600 flex justify-center items-center">
-        <div class="forms bg-white rounded-lg flex overflow-hidden">
+        <div class="forms relative bg-white rounded-lg flex overflow-hidden w-[50%]">
             <!-- ---------------Sign In Form------------------ -->
-            <div class="signIn flex justify-center items-center gap-4 bg-gradient-to-l from-indigo-400 ">
+            <div class="signIn flex justify-center items-center gap-4 bg-gradient-to-l from-indigo-400 absolute ">
                 <div class="left">
                     <img src="https://cdn3d.iconscout.com/3d/premium/thumb/books-8563315-6757378.png?f=webp"
                         alt="sign in" />
@@ -23,29 +23,43 @@
                     <input type="text" class="bg-slate-200 p-2 w-full rounded-md" placeholder="User Name" />
                     <input type="password" class="bg-slate-200 p-2 w-full rounded-md" placeholder="Password" />
                     <div class="flex flex-row justify-start w-full gap-1"><input type="checkbox"/><p>Show Password.</p></div>
-                    <button class="bg-indigo-500 text-white border-none p-2 w-full rounded-md font-bold">Sign
+                    <button class="bg-indigo-500 text-white border-none p-2 w-full rounded-md font-bold" onclick="change()">Sign
                         In</button>
                 </div>
             </div>
             <!-- ---------------------------------------------- -->
 
             <!-- ---------------Sign Up Form------------------ -->
-            <div class="signUp flex justify-center items-center gap-4 bg-gradient-to-r from-indigo-400 ">
+            <div class="signUp flex justify-center items-center gap-4 bg-gradient-to-r from-indigo-400 translate-x-[100%] transition-all">
                 <div class="right flex justify-center items-center flex-col w-[50%] gap-3 w-[50%] h-full p-3">
                     <h1 class="text-left w-full text-indigo-500 text-[30px] font-bold">Sign Up</h1>
                     <input type="text" class="bg-slate-200 p-2 w-full rounded-md" placeholder="User Name" />
                     <input type="email" class="bg-slate-200 p-2 w-full rounded-md" placeholder="E-mail Address" />
                     <input type="password" class="bg-slate-200 p-2 w-full rounded-md" placeholder="Password" />
-                    <button class="bg-indigo-500 text-white border-none p-2 w-full rounded-md font-bold">Sign
-                        In</button>
+                    <button class="bg-indigo-500 text-white border-none p-2 w-full rounded-md font-bold" onclick="change()">Sign
+                        Up</button>
                 </div>
                 <div class="left">
                     <img src="https://cdn3d.iconscout.com/3d/premium/thumb/books-8563315-6757378.png?f=webp"
-                        alt="sign in" />
+                        alt="sign Up" />
                 </div>
             </div>
             <!-- ---------------------------------------------- -->
         </div>
+        <script>
+            function change(){
+                self = document.querySelector('.signIn')
+                signUp = document.querySelector('.signUp')
+                if(!(self.classList.contains("translate-x-[-100%]"))){
+                    
+              self.classList.add('translate-x-[-100%]');
+                  signUp.classList.remove('translate-x-[100%]');
+                }else{
+                    self.classList.remove('translate-x-[-100%]')
+                    signUp.classList.add('translate-x-[100%]')
+                }
+            }
+        </script>
 </body>
 
 </html>
