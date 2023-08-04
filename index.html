@@ -7,22 +7,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="base w-screen h-screen bg-indigo-600 flex justify-center items-center">
-        <div class="forms relative bg-white rounded-lg flex overflow-hidden md:w-[50%] w-[60%] md:shadow-none shadow-lg">
+        <div class="forms relative bg-white rounded-lg flex overflow-hidden md:w-[50%] md:scale-1 scale-[1.2] md:shadow-none shadow-lg md:p-0 p-3">
             <!-- ---------------Sign In Form------------------ -->
             <div class="signIn flex justify-center items-center md:gap-4 md:bg-gradient-to-l h-full from-indigo-400 bg-white absolute transition-all">
                 <div class="left md:flex hidden">
                     <img src="https://cdn3d.iconscout.com/3d/premium/thumb/books-8563315-6757378.png?f=webp"
                         alt="sign in" />
                 </div>
-                <div class="right flex justify-center items-center flex-col md:w-[50%] gap-3 w-full h-full md:p-3 pl-7 pr-7">
+                <div class="right flex justify-center items-center flex-col md:w-[50%] gap-3 w-full h-full p-3">
                     <h1 class="text-left w-full text-indigo-500 text-[30px] font-bold">Sign In</h1>
                     <input type="text" class="bg-slate-200 p-2 w-full rounded-md" placeholder="User Name" />
-                    <input type="password" class="bg-slate-200 p-2 w-full rounded-md" placeholder="Password" />
-                    <div class="flex flex-row justify-start w-full gap-1"><input type="checkbox"/><p>Show Password.</p></div>
+                    
+                    <div class="flex w-full relative"><input type="password" class="password bg-slate-200 p-2 w-full rounded-md" placeholder="Password" />
+                        <button onclick="showPass()" class="bg-transparent border-none"><i class="absolute right-1 top-[50%] -translate-y-[50%] fa-sharp fa-regular fa-eye"></i></button></div>
+                    
+                    
                     <button class="bg-indigo-500 text-white border-none p-2 w-full rounded-md font-bold">Sign
                         In</button>
                     <p class="w-full text-left">Doesn't have account? <button class="font-bold bg-transparent text-indigo-300" onclick="change()">Sign Up</button></p>
@@ -36,7 +40,8 @@
                     <h1 class="text-left w-full text-indigo-500 text-[30px] font-bold">Sign Up</h1>
                     <input type="text" class="bg-slate-200 p-2 w-full rounded-md" placeholder="User Name" />
                     <input type="email" class="bg-slate-200 p-2 w-full rounded-md" placeholder="E-mail Address" />
-                    <input type="password" class="bg-slate-200 p-2 w-full rounded-md" placeholder="Password" />
+                    <div class="flex w-full relative"><input type="password" class="password bg-slate-200 p-2 w-full rounded-md" placeholder="Password" />
+                        <button onclick="showPass()" class="bg-transparent border-none"><i class="absolute right-1 top-[50%] -translate-y-[50%] fa-sharp fa-regular fa-eye"></i></button></div>
                     <button class="bg-indigo-500 text-white border-none p-2 w-full rounded-md font-bold" >Sign
                         Up</button>
                     <p class="w-full text-left">Already have account? <button class="font-bold bg-transparent text-indigo-300" onclick="change()">Sign In</button></p>
@@ -49,6 +54,7 @@
             <!-- ---------------------------------------------- -->
         </div>
         <script>
+            
             function Assain(Assinment) {
                 return document.querySelector(Assinment);
             }
@@ -69,6 +75,15 @@
                 [".signUp", ["translate-x-[100%]"]]])
                   
             }
+        
+            function showPass() {
+              var x = document.querySelector(".password");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+}
         
         </script>
 </body>
