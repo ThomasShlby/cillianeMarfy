@@ -14,7 +14,7 @@
     <div class="base w-screen h-screen bg-indigo-600 flex justify-center items-center">
         <div class="forms relative bg-white rounded-lg flex overflow-hidden md:w-[50%] md:scale-1 scale-[1.2] md:shadow-none shadow-lg md:p-0 p-3">
             <!-- ---------------Sign In Form------------------ -->
-            <div class="signIn flex justify-center items-center md:gap-4 md:bg-gradient-to-l h-full from-indigo-400 bg-white absolute transition-all">
+            <div class="signIn flex justify-center items-center md:gap-4 md:bg-gradient-to-l h-full from-indigo-400 bg-white absolute transition-all opacity-1">
                 <div class="left md:flex hidden">
                     <img src="https://cdn3d.iconscout.com/3d/premium/thumb/books-8563315-6757378.png?f=webp"
                         alt="sign in" />
@@ -35,7 +35,7 @@
             <!-- ---------------------------------------------- -->
 
             <!-- ---------------Sign Up Form------------------ -->
-            <div class="signUp flex justify-center items-center md:gap-4 md:bg-gradient-to-r from-indigo-400 bg-white translate-x-[100%] transition-all">
+            <div class="signUp flex justify-center items-center md:gap-4 md:bg-gradient-to-r from-indigo-400 bg-white translate-x-[100%] transition-all opacity-0">
                 <div class="right flex justify-center items-center flex-col md:w-[50%] gap-3 w-full h-full p-3">
                     <h1 class="text-left w-full text-indigo-500 text-[30px] font-bold">Sign Up</h1>
                     <input type="text" class="bg-slate-200 p-2 w-full rounded-md" placeholder="User Name" />
@@ -71,8 +71,8 @@
             
             function change() {
                 AddClass([
-                [".signIn", ["translate-x-[-100%]"]], 
-                [".signUp", ["translate-x-[100%]"]]])
+                [".signIn", ["translate-x-[-100%]","transition-[opacity]","duration-500", "ease-in-out", "delay-200", "opacity-1"]], 
+                [".signUp", ["translate-x-[100%]","transition-[opacity]","duration-500", "ease-in-out", "delay-200", "opacity-0"]]])
                   
             }
         
